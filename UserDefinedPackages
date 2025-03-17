@@ -1,0 +1,65 @@
+Creation of packages includes following steps: 
+1. Declare the package at the beginning of the java source code file using below syntax. 
+Syntax:  
+package package_name; 
+Above statement should be used in the beginning of the program to include that program in that 
+particular package. 
+
+2. Define a class which is to be put in the package and declare it public. 
+Example: 
+package first_pkg; 
+public class Hello 
+{ 
+  public void display() 
+  { 
+    System.out.println(“I am from Hello class:”); 
+  } 
+} 
+In above example first_pkg is the package name and class Hello is added into it. 
+3. Create the subdirectory which has given the same name of package and stored it into main directory 
+where the source code is present. 
+4. Compile the source file, after that .class file stored into the subdirectory which is created in step 3. 
+
+
+
+ How to access package from another package/import statement: 
+There are three ways to access the package from outside the package. 
+1. import package.*; 
+2. import package.classname; 
+3. fully qualified name.
+
+1) Using packagename.*; 
+ If you use package.* statement then all the classes and interfaces of this package will be 
+accessible. 
+ import is a predefined keyword.  
+Syntax: 
+ import Package_Name.*; 
+Example: 
+//Save by Abc.java 
+ 
+package first_pkg; 
+ 
+public class Abc 
+{ 
+        public void display() 
+ { 
+  System.out.println(“I am from Abc class:”); 
+ } 
+} 
+ 
+//Save by Xyz.java 
+ 
+package second_pkg; 
+import first_pkg.*; 
+ 
+class Xyz 
+{ 
+        public static void main(String args[]) 
+       { 
+        Abc a1=new Abc(); 
+        a1.display(); 
+       } 
+} 
+
+Output: 
+I am from Abc class 
